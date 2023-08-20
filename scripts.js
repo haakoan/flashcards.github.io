@@ -6,7 +6,8 @@ let cards = [
 
 let currentCard = 0;
 
-document.querySelector('.question').innerText = cards[currentCard].question;
+// Initialize the card with both question and answer
+updateCard();
 
 document.getElementById('next').addEventListener('click', () => {
     currentCard++;
