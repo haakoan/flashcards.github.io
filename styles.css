@@ -43,12 +43,10 @@ body {
 
 .cardSide.left {
     left: 0;
-    background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.8)); /* Gradient hint */
 }
 
 .cardSide.right {
     right: 0;
-    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.8)); /* Gradient hint */
 }
 
 
@@ -62,20 +60,20 @@ body {
 .question, .answer {
     font-size: 24px;
     margin: 10px 0;
-    width: 65%;
+    width: 60%;
 }
 
 .answer {
     display: none;
     color: green;
-    width: 65%;
+    width: 60%;
 }
 
 .choices {
     list-style-type: none;
     padding: 4;
     display: none;
-    width: 65%;
+    width: 60%;
 }
 
 .choices li {
