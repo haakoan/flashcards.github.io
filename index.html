@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Flashcards</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- MathJax script for LaTeX support -->
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
-    <header>
-        <h1>Math Flashcards Practice</h1>
-    </header>
 
-    <main>
-    <select id="topicSelect">
-    <!-- Options will be populated by JavaScript -->
-    </select>
-    <div class="flashcard" id="flashcard">
-        <div class="cardSide left"></div>
-        <div class="cardContent">
-            <div class="question"></div>
-            <div class="answer"></div>
+    <div class="container">
+        <!-- Dropdown for topic selection -->
+        <div class="topic-selection">
+            <label for="topicSelect">Select a topic:</label>
+            <select id="topicSelect"></select>
         </div>
-        <div class="cardSide right"></div>
-    </div>
 
-        <button id="prev">Previous</button>
-        <button id="showAnswer">Show Answer</button>
-        <button id="next">Next</button>
-    </main>
+        <!-- Flashcard structure -->
+        <div class="flashcard" id="flashcard">
+            <div class="cardSide left"></div>
+            <div class="cardContent">
+                <div class="question"></div>
+                <div class="answer"></div>
+                <ul class="choices">
+                    <!-- choices will be populated by JavaScript -->
+                </ul>
+            </div>
+            <div class="cardSide right"></div>
+        </div>
+    </div>
 
     <script src="scripts.js"></script>
 </body>
+
 </html>
