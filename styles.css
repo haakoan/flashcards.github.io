@@ -62,17 +62,20 @@ body {
 .question, .answer {
     font-size: 24px;
     margin: 10px 0;
+    width: 65%;
 }
 
 .answer {
     display: none;
     color: green;
+    width: 65%;
 }
 
 .choices {
     list-style-type: none;
     padding: 4;
     display: none;
+    width: 65%;
 }
 
 .choices li {
