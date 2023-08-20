@@ -97,6 +97,22 @@ body {
     margin-left: 10px;
 }
 
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem; /* Adjust size if needed */
+    color: rgba(0, 0, 0, 0.3); /* Semi-transparent icon */
+}
+
+.cardSide.left .arrow-icon {
+    left: 10px;
+}
+
+.cardSide.right .arrow-icon {
+    right: 10px;
+}
+
 /* Responsive styling for mobile devices */
 @media (max-width: 600px) {
     .question, .answer {
