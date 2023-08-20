@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Flashcards</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 
     <!-- MathJax for LaTeX rendering -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -25,7 +27,7 @@
 
         <!-- Flashcard structure -->
         <div class="flashcard" id="flashcard">
-            <div class="cardSide left"></div>
+            <div class="cardSide left"><i class="fas fa-arrow-left arrow-icon"></i></div>
             <div class="cardContent">
                 <div class="question"></div>
                 <div class="answer"></div>
@@ -33,7 +35,7 @@
                     <!-- choices will be populated by JavaScript -->
                 </ul>
             </div>
-            <div class="cardSide right"></div>
+            <div class="cardSide right"><i class="fas fa-arrow-right arrow-icon"></i></div>
         </div>
         </div>
 
