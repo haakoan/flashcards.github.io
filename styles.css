@@ -30,15 +30,24 @@ body {
     position: relative;
 }
 
-.cardSide {
-    width: 20px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    cursor: pointer;
+.cardSide.left, .cardSide.right {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
 }
 
 .cardSide.left {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0.8)); /* Gradient hint */
 }
+
+.cardSide.right {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.8)); /* Gradient hint */
+}
+
 
 .cardContent {
     flex: 1;
