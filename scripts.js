@@ -78,7 +78,7 @@ function updateCard() {
                 if (index === card.correctIndex) {
                     li.classList.add('correct');
                     li.innerHTML += "<span class='icon'>✓</span>";
-                    setTimeout(nextCard, 1000); // Move to next card after 1 second
+                    //setTimeout(nextCard, 1000); // Move to next card after 1 second
                 } else {
                     li.classList.add('incorrect');
                     li.innerHTML += "<span class='icon'>✗</span>";
