@@ -24,7 +24,7 @@ let topics = {
             type: "multipleChoice",
             question: "Hva er verdien av \( \lg(100) \)?",
             options: ["1", "2", "10", "100"],
-            correctOption: 1
+            correctIndex: 1
         },
         {
             type: "standard",
@@ -40,7 +40,7 @@ let topics = {
             type: "multipleChoice",
             question: "Hvilken av følgende er den naturlige logaritmebasen?",
             options: ["2", "10", "e", "Ingen av de ovennevnte"],
-            correctOption: 2
+            correctIndex: 2
         },
         {
             type: "standard",
@@ -58,12 +58,8 @@ let topics = {
             answer: "\( \lg(m^n) = n \times \lg(m) \)"
         }
     ]
-}
-
-
-    
-    // ... other topics
 };
+
 
 let currentTopic = 'Arithmetic'; // default topic
 let currentCard = 0;
