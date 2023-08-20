@@ -1,13 +1,15 @@
 let topics = {
     Arithmetic: [
-        { question: "$$5 + 3$$", answer: "$$8$$" },
-        { question: "$$9 - 6$$", answer: "$$3$$" },
+        { type: 'standard', question: "$$5 + 3$$", answer: "$$8$$" },
+        {
+            type: 'multipleChoice',
+            question: "What is $$5 + 3$$?",
+            choices: ["6", "8", "9"],
+            correctIndex: 1
+        },
+        // ... other questions
     ],
-    Integration: [
-        { question: "$$\\int_0^1 x^2 dx$$", answer: "$$\\frac{1}{3}$$" },
-        // ... other integration questions
-    ],
-    // ... add more topics as needed
+    // ... other topics
 };
 
 let currentTopic = 'Arithmetic'; // default topic
@@ -27,42 +29,14 @@ document.getElementById('topicSelect').addEventListener('change', function() {
     updateCard();
 });
 
-document.getElementById('next').addEventListener('click', () => {
-    currentCard++;
-    if (currentCard >= topics[currentTopic].length) currentCard = 0;  // loop back to the beginning
-    updateCard();
-});
-
-document.getElementById('prev').addEventListener('click', () => {
-    currentCard--;
-    if (currentCard < 0) currentCard = topics[currentTopic].length - 1;  // loop back to the end
-    updateCard();
-});
-
-document.getElementById('showAnswer').addEventListener('click', () => {
-    document.querySelector('.answer').style.display = 'block';
-});
-
-function updateCard() {
-    let card = topics[currentTopic][currentCard];
-    document.querySelector('.question').innerText = card.question;
-    document.querySelector('.answer').innerText = card.answer;
-    document.querySelector('.answer').style.display = 'none';
-
-    // Ask MathJax to typeset the updated content
-    MathJax.typeset();
-}
-
-// ... existing JavaScript ...
-
 document.getElementById('flashcard').addEventListener('click', function(event) {
     if (event.target.classList.contains('left')) {
         // Clicked on the left side of the card
         prevCard();
     } else if (event.target.classList.contains('right')) {
         // Clicked on the right side of the card
-        if (document.querySelector('.answer').style.display === 'block') {
-            // If answer is showing, move to the next card
+        if (document.querySelector('.answer').style.display === 'block' || document.querySelector('.choices').style.display === 'block') {
+            // If answer or choices are showing, move to the next card
             nextCard();
         } else {
             // If answer is not showing, reveal it
@@ -83,11 +57,43 @@ function prevCard() {
     updateCard();
 }
 
-// Update the existing next and prev button event listeners to use the new functions:
-document.getElementById('next').addEventListener('click', nextCard);
-document.getElementById('prev').addEventListener('click', prevCard);
-
-
+function updateCard() {
+    let card = topics[currentTopic][currentCard];
+    let questionDiv = document.querySelector('.question');
+    let answerDiv = document.querySelector('.answer');
+    let choicesList = document.querySelector('.choices');
+    
+    questionDiv.innerText = card.question;
+    
+    if (card.type === 'standard') {
+        answerDiv.innerText = card.answer;
+        choicesList.style.display = 'none';
+        answerDiv.style.display = 'none';
+    } else if (card.type === 'multipleChoice') {
+        choicesList.innerHTML = ''; // Clear existing choices
+        card.choices.forEach((choice, index) => {
+            let li = document.createElement('li');
+            li.textContent = choice;
+            li.addEventListener('click', function() {
+                if (index === card.correctIndex) {
+                    li.classList.add('correct');
+                    li.innerHTML += "<span class='icon'>✓</span>";
+                    setTimeout(nextCard, 1000); // Move to next card after 1 second
+                } else {
+                    li.classList.add('incorrect');
+                    li.innerHTML += "<span class='icon'>✗</span>";
+                }
+                choicesList.querySelectorAll('li').forEach(item => item.removeEventListener('click', arguments.callee));
+            });
+            choicesList.appendChild(li);
+        });
+        choicesList.style.display = 'block';
+        answerDiv.style.display = 'none';
+    }
+    
+    // Ask MathJax to typeset the updated content
+    MathJax.typeset();
+}
 
 // Initialize the card for the default topic
 updateCard();
