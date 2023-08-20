@@ -10,7 +10,7 @@ body {
 
 .container {
     max-width: 800px;
-    width: 90%;
+    width: 95%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -53,6 +53,7 @@ body {
 
 
 .cardContent {
+    width: 80%;
     flex: 1;
     padding: 25px;
     text-align: center;
@@ -70,13 +71,13 @@ body {
 
 .choices {
     list-style-type: none;
-    padding: 0;
+    padding: 4;
     display: none;
 }
 
 .choices li {
     margin-top: 10px;
-    border: 1px solid #ddd;
+    border: 4px solid #ddd;
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s; 
