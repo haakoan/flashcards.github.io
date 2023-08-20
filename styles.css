@@ -5,20 +5,7 @@ body {
     background-color: #f5f5f5; /* a light background */
 }
 
-.flashcard {
-    border: 1px solid #ddd;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 400px; 
-    width: 90%; /* take up 90% of the screen width, up to the max-width */
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff; /* white background for the card */
-    border-radius: 10px; /* rounded corners */
-}
 
-.answer {
-    display: none;
-}
 
 button {
     margin: 5px;
@@ -46,4 +33,50 @@ button:hover {
     button {
         font-size: 1.2em; /* slightly larger buttons */
     }
+}
+
+
+.flashcard {
+    border: 1px solid #ddd;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 400px; 
+    width: 90%; /* take up 90% of the screen width, up to the max-width */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; /* white background for the card */
+    border-radius: 10px; /* rounded corners */
+    display: flex;
+    align-items: center;
+}
+
+.answer {
+    display: none;
+}
+.cardSide {
+    flex: 1;
+    height: 100%;
+    transition: background-color 0.3s; /* smooth transition */
+}
+
+.left {
+    background: linear-gradient(to right, rgba(0,123,255,0.2), transparent);
+}
+
+.right {
+    background: linear-gradient(to left, rgba(0,123,255,0.2), transparent);
+}
+
+.cardContent {
+    flex: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+/* For the hover effect */
+.left:hover {
+    background: linear-gradient(to right, rgba(0,123,255,0.4), transparent);
+}
+
+.right:hover {
+    background: linear-gradient(to left, rgba(0,123,255,0.4), transparent);
 }
