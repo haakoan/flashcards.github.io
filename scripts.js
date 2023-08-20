@@ -53,5 +53,41 @@ function updateCard() {
     MathJax.typeset();
 }
 
+// ... existing JavaScript ...
+
+document.getElementById('flashcard').addEventListener('click', function(event) {
+    if (event.target.classList.contains('left')) {
+        // Clicked on the left side of the card
+        prevCard();
+    } else if (event.target.classList.contains('right')) {
+        // Clicked on the right side of the card
+        if (document.querySelector('.answer').style.display === 'block') {
+            // If answer is showing, move to the next card
+            nextCard();
+        } else {
+            // If answer is not showing, reveal it
+            document.querySelector('.answer').style.display = 'block';
+        }
+    }
+});
+
+function nextCard() {
+    currentCard++;
+    if (currentCard >= topics[currentTopic].length) currentCard = 0;  // loop back to the beginning
+    updateCard();
+}
+
+function prevCard() {
+    currentCard--;
+    if (currentCard < 0) currentCard = topics[currentTopic].length - 1;  // loop back to the end
+    updateCard();
+}
+
+// Update the existing next and prev button event listeners to use the new functions:
+document.getElementById('next').addEventListener('click', nextCard);
+document.getElementById('prev').addEventListener('click', prevCard);
+
+
+
 // Initialize the card for the default topic
 updateCard();
