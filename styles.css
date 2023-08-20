@@ -53,14 +53,12 @@ body {
 .cardContent {
     width: 65%;
     flex: 1;
-    padding: 2px;
     text-align: center;
     display: flex;            /* Set the display to flex */
     justify-content: center;  /* Center the content horizontally */
     align-items: center;      /* Center the content vertically */
     flex-direction: column;   /* Stack children vertically */
-    width: 50%;               /* Keep this if you want to maintain a 50% width */
-    padding: 20px;
+    width: 60%;               /* Keep this if you want to maintain a 50% width */
     box-sizing: border-box;
 }
 
