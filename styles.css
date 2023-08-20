@@ -101,9 +101,7 @@ body {
 }
 
 .arrow-icon {
-    position: absolute;
-    transform: translateY(-50%);
-    font-size: 2rem; /* Adjust size if needed */
+    font-size: 5rem; /* Adjust size if needed */
     color: rgba(0, 0, 0, 0.3); /* Semi-transparent icon */
 }
 
