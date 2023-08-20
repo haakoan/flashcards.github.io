@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-test
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- MathJax script for LaTeX support -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Math Flashcards Practice</h1>
+    </header>
+
+    <main>
+        <div class="flashcard">
+            <p class="question"></p>
+            <p class="answer"></p>
+        </div>
+        <button id="prev">Previous</button>
+        <button id="showAnswer">Show Answer</button>
+        <button id="next">Next</button>
+    </main>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
