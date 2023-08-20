@@ -31,11 +31,14 @@ body {
 }
 
 .cardSide.left, .cardSide.right {
-    width: 25%;
+    width: 15%;
     height: 100%;
     position: absolute;
     top: 0;
     z-index: 10;
+    display: flex;            /* Add these lines */
+    align-items: center;      /* This centers the child items vertically */
+    justify-content: center;  /* This centers the child items horizontally */
 }
 
 .cardSide.left {
@@ -51,7 +54,7 @@ body {
 
 .cardContent {
     flex: 1;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 }
 
@@ -99,7 +102,6 @@ body {
 
 .arrow-icon {
     position: absolute;
-    top: 50%;
     transform: translateY(-50%);
     font-size: 2rem; /* Adjust size if needed */
     color: rgba(0, 0, 0, 0.3); /* Semi-transparent icon */
